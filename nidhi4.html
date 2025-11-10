@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nidhi | Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ===== Global ===== */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      color: #fff;
+      scroll-behavior: smooth;
+      background: url('code.jpg') center/cover fixed no-repeat;
+    }
+
+    section {
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
+      padding: 100px 20px;
+      transition: all 0.4s ease-in-out;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    p {
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    /* ===== Navbar ===== */
+    #top-logo-span {
+      animation: textcolor 4s infinite;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+
+    @keyframes textcolor {
+      0% { color: #00f; }
+      25% { color: #ff00ff; }
+      50% { color: #ff1493; }
+      100% { color: #00ffff; }
+    }
+
+    .navbar {
+      font-size: 18px;
+      font-weight: 500;
+      background: rgba(0, 0, 0, 0.85) !important;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 15px rgba(0,255,255,0.2);
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      margin-left: 20px;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #00ffff !important;
+      text-shadow: 0 0 8px #00ffff;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #00ffff;
+      text-shadow: 0 0 20px #00ffff;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    .hero-text .btn-primary {
+      background: linear-gradient(135deg, #8e2de2, #4a00e0);
+      border: none;
+      border-radius: 40px;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+      transition: all 0.4s ease;
+    }
+
+    .hero-text .btn-primary:hover {
+      background: linear-gradient(135deg, #4a00e0, #8e2de2);
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+    }
+
+    /* ===== About ===== */
+    #about {
+      text-align: center;
+    }
+
+    #my-img {
+      display: block;
+      margin: 30px auto;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+      transition: transform 0.5s ease;
+    }
+
+    #my-img:hover {
+      transform: scale(1.05);
+    }
+
+    .resume-buttons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .resume-buttons a {
+      position: relative;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.4s ease;
+    }
+
+    .resume-buttons .btn {
+      background: linear-gradient(135deg, #8e2de2, #4a00e0);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+    }
+
+    .resume-buttons .btn-outline {
+      border: 2px solid #9c27b0;
+      color: #9c27b0;
+      background: transparent;
+    }
+
+    .resume-buttons a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+    }
+
+    /* ===== Skills ===== */
+    #skills h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: #00ffff;
+      text-shadow: 0 0 18px #00ffff;
+      margin-bottom: 10px;
+    }
+
+    #skills p {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 50px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 50px 60px;
+      justify-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .skill-item {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px 20px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 220px;
+      text-align: center;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    .skill-item:nth-child(odd) { animation-delay: 0.3s; }
+    .skill-item:nth-child(even) { animation-delay: 0.5s; }
+
+    .skill-item i {
+      font-size: 60px;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.6));
+    }
+
+    .skill-item:hover {
+      transform: translateY(-10px) scale(1.05);
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
+    }
+
+    @keyframes fadeInUp {
+      0% { transform: translateY(40px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 992px) {
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .skills-grid { grid-template-columns: 1fr; }
+      .skill-item { max-width: 90%; }
+    }
+
+    /* ===== Projects ===== */
+    #project h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff;
+    }
+
+    .project-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 35px;
+      justify-content: center;
+      justify-items: center;
+      align-items: stretch;
+      margin-top: 50px;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: all 0.5s ease;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      max-width: 300px;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .project-card i {
+      font-size: 45px;
+      color: #00ffff;
+      margin-bottom: 15px;
+      transition: all 0.4s ease;
+    }
+
+    .project-card:hover i {
+      color: #ff00ff;
+      transform: scale(1.2);
+      text-shadow: 0 0 25px currentColor;
+    }
+
+    .project-card a {
+      text-decoration: none;
+      color: #00ffff;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .project-card a:hover {
+      color: #ff00ff;
+      text-shadow: 0 0 10px #ff00ff;
+    }
+
+    /* ===== Education ===== */
+    #education {
+      text-align: center;
+      color: #ccc;
+    }
+
+    #education h2 {
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff;
+      margin-bottom: 30px;
+    }
+
+    /* ===== Contact ===== */
+    .contact h2 {
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff;
+      margin-bottom: 30px;
+    }
+
+    .contact a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-shadow: 0 0 10px #ff00ff;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: rgba(0, 0, 0, 0.9);
+      color: #ccc;
+      text-align: center;
+      padding: 20px 0;
+      border-top: 1px solid #333;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h1 { font-size: 2.2rem; }
+      .hero-text p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><span id="top-logo-span">Nidhi</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#project">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>Hello, I am Nidhi</h1>
+      <p>I craft exceptional digital experiences with code, creativity, and passion.</p>
+      <a class="btn btn-primary" href="#contact">Hire Me</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container text-center">
+      <img src="girl.jpg" id="my-img" alt="Nidhi Photo" height="300">
+      <h2><b>About Me</b></h2>
+      <p>Hello! I'm <b>Nidhi Ikhar</b>, a passionate and curious learner currently pursuing my <b>Bachelor of Commerce (First Year)</b> at <b>YCMOU University</b>.</p>
+      <p>I’ve developed a keen enthusiasm for <b>web development</b>. I believe learning never stops, and I'm excited to keep improving my skills.</p>
+      <p>My career goal is to become a <b>skilled web developer</b>, creating user-friendly and visually appealing websites that make a difference.</p>
+    </div>
+    <div class="resume-buttons">
+      <a href="Resume_Sakshi.pdf" class="btn" download>📄 Download Resume</a>
+      <a href="resume.html" class="btn-outline" target="_blank">🌐 View Online</a>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="skill" id="skills">
+    <div class="container text-center">
+      <h1><b>My Skills</b></h1>
+      <p>Here are some of the technologies and tools I work with:</p>
+
+      <div class="skills-grid">
+        <div class="skill-item"><i class="fa-brands fa-html5" style="color:#e34f26;"></i><h5>HTML</h5></div>
+        <div class="skill-item"><i class="fa-brands fa-css3-alt" style="color:#2965f1;"></i><h5>CSS</h5></div>
+        <div class="skill-item"><i class="fa-brands fa-js" style="color:#f7df1e;"></i><h5>JavaScript</h5></div>
+        <div class="skill-item"><i class="fa-brands fa-bootstrap" style="color:#7952b3;"></i><h5>Bootstrap</h5></div>
+        <div class="skill-item"><i class="fa-solid fa-code" style="color:#00ffff;"></i><h5>C / C++</h5></div>
+        <div class="skill-item"><i class="fa-brands fa-java" style="color:#f89820;"></i><h5>Java / Adv Java</h5></div>
+        <div class="skill-item"><i class="fa-brands fa-git-alt" style="color:#f34f29;"></i><h5>Git</h5></div>
+        <div class="skill-item"><i class="fa-brands fa-github" style="color:#fff;"></i><h5>GitHub</h5></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="project">
+    <div class="container text-center">
+      <h1><b>Projects</b></h1>
+      <div class="project-container">
+        <div class="project-card"><i class="fa-solid fa-code"></i><h2>Portfolio Website</h2><p>Personal portfolio website to showcase projects, skills, and professional profile.</p><a href="file:///E:/HTML/HTML/nidhi4.html">View Project</a></div>
+        <div class="project-card"><i class="fa-brands fa-app-store"></i><h2>Nike Shoe</h2><p>A high-end responsive webpage built using HTML, CSS, and JS with sleek animations.</p><a href="file:///E:/HTML/HTML/nike1.html">View Project</a></div>
+        <div class="project-card"><i class="fa-solid fa-calculator"></i><h2>Calculator</h2><p>A responsive calculator designed using HTML, CSS, and JavaScript.</p><a href="file:///E:/HTML/HTML/kittu1.html">View Project</a></div>
+        <div class="project-card"><i class="fa-solid fa-utensils"></i><h2>Menu Card</h2><p>A food menu page created using HTML and CSS, providing a clean and appealing design.</p><a href="file:///E:/HTML/HTML/food.html">View Project</a></div>
+        <div class="project-card"><i class="fa-solid fa-car"></i><h2>Mercedes Maybach SL680</h2><p>A responsive Mercedes Maybach webpage with performance design.</p><a href="file:///E:/HTML/HTML/car.html">View Project</a></div>
+        <div class="project-card"><i class="fa-solid fa-right-to-bracket"></i><h2>Login / Sign Up Page</h2><p>A responsive login/sign up page with animated design elements.</p><a href="file:///E:/HTML/HTML/sign.html">View Project</a></div>
+        <div class="project-card"><i class="fa-solid fa-cloud-sun"></i><h2>Weather App</h2><p>A responsive Weather App with live location and animated UI.</p><a href="file:///E:/HTML/HTML/weather.html">View Project</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="educa" id="education">
+    <div class="container text-center">
+      <h2><b>Education</b></h2>
+      <p><b>Bachelor of Commerce (First Year):</b> Yashwantrao Chauhan Open University, Nasik.</p>
+      <p><b>Completed Diploma in Web Development</b> with C, C++, Java, Advanced Java, HTML, CSS, JavaScript, and Bootstrap.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container text-center">
+      <h2><b>Contact</b></h2>
+      <p><b>Let's work together! You can reach me at:</b></p>
+      <p>Email: <a href="mailto:Nidhiikhar747@gmail.com">Nidhiikhar747@gmail.com</a></p>
+      <p>Contact No: 9049910373</p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/nidhi-ikhar-bb9b4a378/">https://www.linkedin.com/in/nidhi-ikhar-bb9b4a378/</a></p>
+      <p>GitHub: <a href="https://github.com/Nidhi-ikhar">https://github.com/Nidhi-ikhar</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Nidhi | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
